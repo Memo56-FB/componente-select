@@ -1,6 +1,6 @@
-const selectBranches = document.querySelectorAll('.branches__select');
+const selectBranches = document.querySelectorAll('.branches-mazda-form__select-branches');
 const options = Array.from(selectBranches[0].options);
-const inputFilter = document.querySelector('.branches__input');
+const inputFilter = document.querySelector('.branches-mazda-form__input-filter');
 
 function findBranches (search, options) {
 return options.filter(option => {
