@@ -1,22 +1,23 @@
-const selectBranches = document.querySelectorAll('.branches-mazda-form__select-branches');
-const options = Array.from(selectBranches[0].options);
-const inputFilter = document.querySelector('.branches-mazda-form__input-filter');
+const selectBranchesMazda_filter = document.querySelectorAll('.branches-mazda-form__select-branches');
+const optionsMazda_filter = Array.from(selectBranchesMazda_filter[0].options);
+const inputFilterMazda_filter = document.querySelector('.branches-mazda-form__input-filter');
 
-function findBranches (search, options) {
-return options.filter(option => {
+function findBranches (search, optionsMazda_filter) {
+return optionsMazda_filter.filter(option => {
     const regex = new RegExp(search, 'gi');
     return option.text.match(regex);
 });
 }
 
 function filterBranches () {
-options.forEach(option => { 
+optionsMazda_filter.forEach(option => { 
     option.remove();
     option.selected = false;
 });
-const matchArray = findBranches(this.value, options);
-selectBranches[0].append(...matchArray);
+const matchArray = findBranches(this.value, optionsMazda_filter);
+selectBranchesMazda_filter[0].append(...matchArray);
 }
 
-inputFilter.addEventListener('change', filterBranches);
-inputFilter.addEventListener('keyup', filterBranches);
+
+inputFilterMazda_filter.addEventListener('change', filterBranches);
+inputFilterMazda_filter.addEventListener('keyup', filterBranches);
